@@ -260,6 +260,7 @@ class Djangodeployer:
         SUPERVISOR_CONF = "".join(SUPERVISOR_CONF)
         SUPERVISOR_CONF = "'" + SUPERVISOR_CONF + "'"
         self.execute(f'sudo bash -c "echo {SUPERVISOR_CONF} > {filename}"')
+        self.execute('sudo supervisorctl reload')
         self.execute('sudo supervisorctl status')
 
     def set_nginx(self):
