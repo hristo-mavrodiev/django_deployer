@@ -1,4 +1,4 @@
-# django_deployer  
+# djangodeployer  
 Deploy django project with nginx, gunicorn, supervisor, postgresql on debian.
 
 
