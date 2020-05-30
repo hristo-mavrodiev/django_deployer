@@ -8,8 +8,11 @@ from getpass import getpass
 from pprint import pprint as pp
 
 import logging
+from logging.handlers import RotatingFileHandler
+logging.basicConfig(format='%(message)s', datefmt= "%Y-%m-%d %H:%M:%S", level=logging.INFO)
 logger = logging.getLogger(__name__)
-
+logger.addHandler(RotatingFileHandler(filename='djangodeployer.log', mode='w', 
+                  maxBytes=512000, backupCount=4))
 
 class Djangodeployer:
     """
