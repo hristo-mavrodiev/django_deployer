@@ -162,10 +162,11 @@ class Djangodeployer:
 
     def create_django_proj_folder(self):
         self.wrap_print("Create Django Folder")
-        if os.path.exists(f'/home/{self._LINUX_USER}/{self._DJ_PROJ}'):
-            if self.ask_input("Replace the existing directory ? y/n "):
-                self.execute(f'sudo rm -rf /home/{self._LINUX_USER}/{self._DJ_PROJ}')
-        self.execute(f'mkdir -p /home/{self._LINUX_USER}/{self._DJ_PROJ}')
+        main_dir = f'/home/{self._LINUX_USER}/{self._DJ_PROJ}'
+        if os.path.exists(main_dir):
+            if self.ask_input(f"Directory {main_dir} already exists. Completely erase it's content ? y/n "):
+                self.execute(f'sudo rm -rf {main_dir}')
+        self.execute(f'mkdir -p {main_dir}')
 
     def create_django_venv(self):
         self.wrap_print("Create Django venv")
