@@ -47,7 +47,7 @@ class Djangodeployer:
         if os.path.exists(self.configfile):
             logging.warning(f'File {self.configfile} already exists.')
             sys.exit(1)
-        copyfile(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'default.json'), 'dj_conf.json')
+        copyfile(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'default_conf.json'), 'dj_conf.json')
         logging.info(f'New file {self.configfile}')
 
     def read_config(self):
