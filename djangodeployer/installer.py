@@ -123,7 +123,9 @@ class Djangodeployer:
                      nginx supervisor ufw python3 python3-pip python3-venv python3-dev -y')
 
     def check_root(self):
-        pass
+        if os.geteuid() == 0:
+          logger.warning('Running as root user. Please run it as another user. This affects folders ownership.')
+          sys.exit(1)
 
     def create_user(self):
         "Create superuser on the server with the LINUX_USER name"
