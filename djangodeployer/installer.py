@@ -9,10 +9,11 @@ from pprint import pprint as pp
 
 import logging
 from logging.handlers import RotatingFileHandler
-logging.basicConfig(format='%(message)s', datefmt= "%Y-%m-%d %H:%M:%S", level=logging.INFO)
+logging.basicConfig(format='%(message)s', datefmt="%Y-%m-%d %H:%M:%S", level=logging.INFO)
 logger = logging.getLogger(__name__)
-logger.addHandler(RotatingFileHandler(filename='djangodeployer.log', mode='w', 
+logger.addHandler(RotatingFileHandler(filename='djangodeployer.log', mode='w',
                   maxBytes=512000, backupCount=4))
+
 
 class Djangodeployer:
     """
@@ -50,7 +51,7 @@ class Djangodeployer:
         if os.path.exists(self.configfile):
             logging.warning(f'File {self.configfile} already exists.')
             sys.exit(1)
-        copyfile(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'default_conf.json'), 'dj_conf.json')
+        copyfile(os.path.join(os.path.dirname(__file__), 'default_conf.json'), 'dj_conf.json')
         logging.info(f'New file {self.configfile}')
 
     def read_config(self):
@@ -124,8 +125,8 @@ class Djangodeployer:
 
     def check_root(self):
         if os.geteuid() == 0:
-          logger.warning('Running as root user. Please run it as another user. This affects folders ownership.')
-          sys.exit(1)
+            logger.warning('Running as root user. Please run it as another user. This affects folders ownership.')
+            sys.exit(1)
 
     def create_user(self):
         "Create superuser on the server with the LINUX_USER name"
