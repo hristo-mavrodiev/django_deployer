@@ -5,4 +5,4 @@ include *.md
 include LICENSE.txt
 
 # Include default configuration
-include default_conf.json
+include djangodeployer/default_conf.json

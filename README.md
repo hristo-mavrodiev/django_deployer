@@ -22,13 +22,18 @@ Deploy with the command:
 ``` bash
 djangodeployer deploy
 ```
+### Requirements
+ - Python3.6+
+
+### Installation
+```python3 -m pip install djangodeployer```
+
 ### Acknowledgments
  Most of the functions use the code from Corey Schafer's youtube channel:
  - https://www.youtube.com/watch?v=Sa_kQheCnds&t=2952s  
  - https://www.youtube.com/watch?v=goToXTC96Co  
  - CoreyMSchafer - https://github.com/CoreyMSchafer  
 The code is wrapped in a python package to automate the deployment.  
-
 
 ### License
 MIT
