@@ -1,13 +1,6 @@
 # djangodeployer  
 Deploy django project with nginx, gunicorn, supervisor, postgresql on debian.
 
-### Acknowledgments
- Most of the functions use the code from Corey Schafer's youtube channel:
- - https://www.youtube.com/watch?v=Sa_kQheCnds&t=2952s  
- - https://www.youtube.com/watch?v=goToXTC96Co  
- - CoreyMSchafer - https://github.com/CoreyMSchafer  
-The code is wrapped in a python package to automate the deployment.  
-
 ### Quick start    
 Creates the basic config file.  
 ``` bash
@@ -29,6 +22,12 @@ Deploy with the command:
 ``` bash
 djangodeployer deploy
 ```
+### Acknowledgments
+ Most of the functions use the code from Corey Schafer's youtube channel:
+ - https://www.youtube.com/watch?v=Sa_kQheCnds&t=2952s  
+ - https://www.youtube.com/watch?v=goToXTC96Co  
+ - CoreyMSchafer - https://github.com/CoreyMSchafer  
+The code is wrapped in a python package to automate the deployment.  
 
 
 ### License
